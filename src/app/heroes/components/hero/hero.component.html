@@ -1,0 +1,26 @@
+<h1 class="text-danger">{{ name }}</h1>
+<dl>
+  <td>Name:</td>
+  <dd>{{ name }}</dd>
+  <td>Age:</td>
+  <dd>{{ age }}</dd>
+  <td>{{ getHeroDescription }}:</td>
+  <dd>{{ getHeroDescription() }}</dd>
+  <td>Capitalized:</td>
+  <dd>{{ capitalizedName }}</dd>
+  <td>Strengths:</td>
+  <ul>
+    <li *ngFor="let item of strengths">{{ item }}</li>
+  </ul>
+</dl>
+
+<button
+  class="btn btn-primary mx-2"
+  (click)="changeHero()"
+  *ngIf="nameNotYetChanged"
+>
+  Change name
+</button>
+<button class="btn btn-primary" (click)="changeAge()" *ngIf="ageNotYetChanged">
+  Change age
+</button>
